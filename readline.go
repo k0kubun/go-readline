@@ -195,3 +195,8 @@ func LineBuffer() string {
 func RefreshLine() {
 	C.rl_refresh_line(0, 0)
 }
+
+// Enable/Disable signal handlers
+func CatchSignals(catch int) {
+	C.rl_catch_signals = C.int(catch)
+}
