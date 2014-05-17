@@ -190,3 +190,8 @@ func ProcessCompletion(textC *C.char, lineC *C.char, start, end int) **C.char {
 func LineBuffer() string {
 	return C.GoString(C.rl_line_buffer)
 }
+
+// RefreshLine refreshes a current line.
+func RefreshLine() {
+	C.rl_refresh_line(0, 0)
+}
